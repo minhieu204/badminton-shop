@@ -23,8 +23,18 @@ export default defineConfig([
       },
     },
     rules: {
+
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
 
+      //material UI
+      'no-restricted-imports': [
+        'error',
+        {
+          'patterns': [{ 'regex': '^@mui/[^/]+$' }]
+        }
+      ],
+
+      //common
       'no-console': 1,
       'no-lonely-if': 1,
       'no-trailing-spaces': 1,
