@@ -6,6 +6,10 @@ const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: 'data-mui-color-scheme'
   },
+  trello: {
+    appBarHeight : '48px',
+    boardBarHeight : '58px'
+  },
   colorSchemes: {
     light: {
       palette: {
