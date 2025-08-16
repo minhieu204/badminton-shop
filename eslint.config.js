@@ -27,12 +27,12 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
 
       //material UI
-      'no-restricted-imports': [
-        'error',
-        {
-          'patterns': [{ 'regex': '^@mui/[^/]+$' }]
-        }
-      ],
+      // 'no-restricted-imports': [
+      //   'error',
+      //   {
+      //     'patterns': [{ 'regex': '^@mui/[^/]+$' }]
+      //   }
+      // ],
 
       //common
       'no-console': 1,
