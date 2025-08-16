@@ -46,7 +46,7 @@ function SelectMode() {
 function App() {
 
   return (
-    <Container disableGutters maxWidth={false} sx={{ height: '100vh'}}>
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
       <Box sx={{
         backgroundColor: 'primary.light',
         width: '100%',
