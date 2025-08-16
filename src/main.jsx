@@ -7,8 +7,13 @@ import theme from './theme'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider
+      theme={theme}
+      defaultMode='system'
+      modeStorageKey='app-theme-mode'
+      disableTransitionOnChange
+    >
+      <CssBaseline enableColorScheme/>
       <App />
     </ThemeProvider>
   </StrictMode>,

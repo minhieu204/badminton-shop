@@ -9,6 +9,19 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <!-- fix flash load -->
+    <script>
+      (function () {
+        try {
+          const mode = localStorage.getItem('app-theme-mode') || 'system';
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const finalMode = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+          document.documentElement.setAttribute('data-mui-color-scheme', finalMode);
+        } catch (e) {
+          document.documentElement.setAttribute('data-mui-color-scheme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
