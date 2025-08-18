@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import { red } from '@mui/material/colors'
-import { BorderColor } from '@mui/icons-material'
+import { BorderColor, Height } from '@mui/icons-material'
 
 // Create a theme instance.
 const theme = createTheme({
@@ -59,6 +59,25 @@ const theme = createTheme({
   },
   components: {
     // Name of the component
+    MuiCssBaseline: {
+      styleOverrides: {
+        // Name of the slot
+        body: {
+          '*::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb': {
+            backgroundColor: '#bdc3c7',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#1976d2',
+            borderRadius: '8px'
+          }
+        }
+      },
+    },
     MuiButton: {
       styleOverrides: {
         // Name of the slot
