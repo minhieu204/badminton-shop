@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import { red } from '@mui/material/colors'
+import { BorderColor } from '@mui/icons-material'
 
 // Create a theme instance.
 const theme = createTheme({
@@ -15,10 +16,18 @@ const theme = createTheme({
       palette: {
         mode: 'light',
         primary: {
-          main: '#556cd6',
+          main: '#1976d2',
         },
         secondary: {
-          main: '#19857b',
+          main: '#9c27b0',
+        },
+        background: {
+          default: '#f9f9fb',
+          paper: '#ffffff',
+        },
+        text: {
+          primary: '#1e1e2f',
+          secondary: '#5f6368'
         },
         error: {
           main: red.A400,
@@ -32,7 +41,15 @@ const theme = createTheme({
           main: '#90caf9',
         },
         secondary: {
-          main: '#f48fb1',
+          main: '#ce93d8',
+        },
+        background: {
+          default: '#121212',
+          paper: '#1e1e1e',
+        },
+        text: {
+          primary: '#e0e0e0',
+          secondary: '#b0b0b0'
         },
         error: {
           main: red.A400,
@@ -40,6 +57,46 @@ const theme = createTheme({
       },
     },
   },
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          textTransform: 'none'
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        // Name of the slot
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.875rem'
+        })
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        // Name of the slot
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.875rem',
+          '.MuiOutlinedInput-notchedOutline': {
+            BorderColor: theme.palette.primary.light
+          },
+          '&:hover': {
+            '.MuiOutlinedInput-notchedOutline': {
+              BorderColor: theme.palette.primary.main
+            },
+          },
+          '& fieldest': {
+            borderWidth: '1px !important'
+          }
+        })
+      }
+    }
+  }
 })
 
 export default theme
