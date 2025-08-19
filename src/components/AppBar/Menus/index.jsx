@@ -22,6 +22,7 @@ function Menus({ title }) {
   return (
     <Box>
       <Button
+        sx={{ color: 'white' }}
         id={`basic-button-${title}`}
         aria-controls={open ? `basic-menu-${title}` : undefined}
         aria-haspopup="true"
