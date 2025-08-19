@@ -1,6 +1,4 @@
 import { createTheme } from '@mui/material/styles'
-import { red } from '@mui/material/colors'
-import { BorderColor, Height } from '@mui/icons-material'
 
 // Create a theme instance.
 const theme = createTheme({
@@ -16,44 +14,37 @@ const theme = createTheme({
       palette: {
         mode: 'light',
         primary: {
-          main: '#1976d2',
-        },
-        secondary: {
-          main: '#9c27b0',
+          main: '#1565c0',
         },
         background: {
-          default: '#f9f9fb',
-          paper: '#ffffff',
+          default: '#1565c0',
+          paper: '#1565c0',
         },
         text: {
-          primary: '#1e1e2f',
-          secondary: '#5f6368'
+          primary: '#fff',
+          secondary: '#fff'
         },
-        error: {
-          main: red.A400,
-        },
+        customBg: { main: '#1976d2' }
       },
     },
     dark: {
       palette: {
         mode: 'dark',
         primary: {
-          main: '#90caf9',
+          main: '#2c3e50',
         },
         secondary: {
           main: '#ce93d8',
         },
         background: {
-          default: '#121212',
-          paper: '#1e1e1e',
+          default: '#2c3e50',
+          paper: '#2c3e50',
         },
         text: {
           primary: '#e0e0e0',
           secondary: '#b0b0b0'
         },
-        error: {
-          main: red.A400,
-        },
+        customBg: { main: '#34495e' }
       },
     },
   },
@@ -68,11 +59,11 @@ const theme = createTheme({
             height: '8px'
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#1976d2',
+            backgroundColor: 'white',
             borderRadius: '8px'
           }
         }
@@ -89,30 +80,26 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         // Name of the slot
-        root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+        root: {
           fontSize: '0.875rem'
-        })
+        }
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         // Name of the slot
-        root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+        root: {
           fontSize: '0.875rem',
-          '.MuiOutlinedInput-notchedOutline': {
-            BorderColor: theme.palette.primary.light
-          },
-          '&:hover': {
-            '.MuiOutlinedInput-notchedOutline': {
-              BorderColor: theme.palette.primary.main
-            },
-          },
-          '& fieldest': {
+          '& fieldset': {
             borderWidth: '1px !important'
+          },
+          '&:hover fieldset': {
+            borderWidth: '2px !important'
+          },
+          '&.Mui-focused fieldset': {
+            borderWidth: '2px !important'
           }
-        })
+        }
       }
     }
   }
