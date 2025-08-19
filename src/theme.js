@@ -1,37 +1,41 @@
 import { createTheme } from '@mui/material/styles'
 
+const APP_BAR_HEIGHT = '58px'
+const BOARD_BAR_HEIGHT = '60px'
+const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGHT})`
 // Create a theme instance.
 const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: 'data-mui-color-scheme'
   },
   trello: {
-    appBarHeight : '58px',
-    boardBarHeight : '60px'
+    appBarHeight: APP_BAR_HEIGHT,
+    boardBarHeight: BOARD_BAR_HEIGHT,
+    boardContentHeight: BOARD_CONTENT_HEIGHT
   },
   colorSchemes: {
     light: {
       palette: {
         mode: 'light',
         primary: {
-          main: '#1565c0',
+          main: '#1976d2',
         },
         background: {
           default: '#1565c0',
           paper: '#1565c0',
         },
-        text: {
-          primary: '#fff',
-          secondary: '#fff'
+        customBg: {
+          main: '#1976d2',
+          column: '#ebecf0',
+          card: 'white'
         },
-        customBg: { main: '#1976d2' }
       },
     },
     dark: {
       palette: {
         mode: 'dark',
         primary: {
-          main: '#2c3e50',
+          main: '#1976d2',
         },
         secondary: {
           main: '#ce93d8',
@@ -40,11 +44,11 @@ const theme = createTheme({
           default: '#2c3e50',
           paper: '#2c3e50',
         },
-        text: {
-          primary: '#e0e0e0',
-          secondary: '#b0b0b0'
-        },
-        customBg: { main: '#34495e' }
+        customBg: {
+          main: '#34495e',
+          column: '#333643',
+          card: 'black'
+        }
       },
     },
   },
@@ -82,6 +86,14 @@ const theme = createTheme({
         // Name of the slot
         root: {
           fontSize: '0.875rem'
+        }
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          '&.MuiTypography-body1': { fontSize: '0.875rem' }
         }
       },
     },
