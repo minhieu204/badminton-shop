@@ -25,7 +25,7 @@ function Profile() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 30, height: 30 }}
+            sx={{ width: 34, height: 34 }}
             alt="NMH"
             src="https://minhieu204.github.io/my-portfolio/assets/me-CWFdOyeC.jpg"
           />
