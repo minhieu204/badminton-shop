@@ -8,8 +8,9 @@ import FilterListIcon from '@mui/icons-material/FilterList'
 import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import { capitalizeFirstLetter } from '~/utils/formattes'
 
-function BoardBar() {
+function BoardBar({ board }) {
 
   const MENU_STYLES = {
     color: 'white',
@@ -42,13 +43,13 @@ function BoardBar() {
         <Chip
           sx={ MENU_STYLES }
           icon={<DashboardIcon />}
-          label="Trello web"
+          label={board.title}
           clickable
         />
         <Chip
           sx={ MENU_STYLES }
           icon={<VpnLockIcon />}
-          label="Public/Private workspace"
+          label={capitalizeFirstLetter(board?.type)}
           clickable
         />
         <Chip
