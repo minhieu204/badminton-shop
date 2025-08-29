@@ -27,7 +27,8 @@ function TrelloCard({ card }) {
   const dndKitCardStyle = {
     transform: CSS.Translate.toString(transform),
     transition,
-    opacity: isDragging ? 0.5 : undefined
+    opacity: isDragging ? 0.5 : undefined,
+    border: isDragging ? '1px solid #2ecc71' : undefined
   }
 
   const shouldShowCardActions = () => {
@@ -44,7 +45,9 @@ function TrelloCard({ card }) {
         cursor: 'pointer',
         boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
         bgcolor: 'customBg.card',
-        overflow: 'unset'
+        overflow: 'unset',
+        opacity: card?.FE_PlaceholderCard ? 0 : 1,
+        pointerEvents: card?.FE_PlaceholderCard ? 'none' : 'auto'
       }}
     >
       {card?.cover && <CardMedia sx={{ height: 140 }} image={card?.cover} />}
